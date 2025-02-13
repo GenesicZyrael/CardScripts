@@ -2,13 +2,14 @@ Duel.GetFusionMaterial=(function()
 	local oldfunc=Duel.GetFusionMaterial
 	return function(tp)
 		local res=oldfunc(tp)
-		local g=Duel.GetMatchingGroup(Card.IsHasEffect,tp,LOCATION_EXTRA|LOCATION_DECK,0,nil,EFFECT_EXTRA_FUSION_MATERIAL)
+		local g=Duel.GetMatchingGroup(Card.IsHasEffect,tp,LOCATION_DECK,0,nil,EFFECT_EXTRA_FUSION_MATERIAL)
 		if #g>0 then
 			res:Merge(g)
 		end
 		return res
 	end
 end)()
+
 Duel.ConfirmDecktop=(function()
 	local oldfunc=Duel.ConfirmDecktop
 	return function(tp,count)
@@ -17,12 +18,31 @@ Duel.ConfirmDecktop=(function()
 		local eg=Duel.GetMatchingGroup(Card.IsHasEffect,tp,LOCATION_ALL,LOCATION_ALL,nil,EVENT_DECKTOP_CONFIRM)
 		if #deckg>0 then
 			for tc in deckg:Iter() do
-				Duel.RegisterFlagEffect(tp,tc:GetCode()+EVENT_CUSTOM,RESET_PHASE+PHASE_END,0,1)
+				Duel.RegisterFlagEffect(tp,tc:GetCode()+EVENT_CUSTOM,RESET_PHASE|PHASE_END,0,1)
 			end
 			eg:Merge(deckg)
 			Duel.RaiseEvent(eg,EVENT_DECKTOP_CONFIRM,nil,0,tp,tp,0)
 		end
 		return deckg
+	end
+end)()
+
+Card.GetLocation=(function()
+	local oldf=Card.GetLocation
+	return function(c)
+		if c:HasFlagEffect(PSEUDO_CARD_FLAG) then
+			return c.material_count_location
+		end
+		return oldf(c)
+	end
+end)()
+Card.IsLocation=(function()
+	local oldf=Card.IsLocation
+	return function(c,location)
+		if c:HasFlagEffect(PSEUDO_CARD_FLAG) then
+			return c:GetFlagEffectLabel(MATERIAL_COUNT_LOCATION_FLAG)&location>0
+		end
+		return oldf(c,location)
 	end
 end)()
 

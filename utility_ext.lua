@@ -8,6 +8,24 @@ function Card.GetExtraMonsterType(c)
   local result = c:GetType()&extra_type
   return result
 end
+--Check if a card is "pseudo", i.e. created for use with EFFECT_FUSION_MATERIAL_COUNT
+--if uid is passed then check if the card has that uid
+function Card.IsPseudo(c,uid)
+	if not c:HasFlagEffect(PSEUDO_CARD_FLAG) then return false end
+	if uid then
+		return c:GetFlagEffectLabel(ORIGINAL_CARD_UID_FLAG)==uid
+	end
+	return true
+end
+--Check if a card is not "pseudo", i.e. not created for use with EFFECT_FUSION_MATERIAL_COUNT
+--if uid is passed then check if the card has that uid
+function Card.IsNotPseudo(c,uid)
+	if not c:HasFlagEffect(NOT_PSEUDO_CARD_FLAG) then return false end
+	if uid then
+		return c:GetFlagEffectLabel(NOT_PSEUDO_CARD_FLAG)==uid
+	end
+	return true
+end
 local function CheckEffectUniqueCheck(c,tp,code)
 	if not (aux.FaceupFilter(Card.IsCode,code) and c:IsHasEffect(EFFECT_UNIQUE_CHECK)) then 
 		return false
