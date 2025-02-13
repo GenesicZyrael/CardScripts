@@ -216,11 +216,11 @@ local function AmorphOp(e,tp,eg,ep,ev,re,r,rp)
 	local id=c:GetCode()
 	local b1=Duel.CheckReleaseGroup(tp,Card.IsReleasableByEffect,1,c)
 	local b2=true
-	if not (c:IsHasEffect(2202500025) and Duel.SelectYesNo(tp,aux.Stringid(2202500025,0))) then
+	if not (c:IsHasEffect(2002000001) and Duel.SelectYesNo(tp,aux.Stringid(2002000001,0))) then
 		--Tribute 1 monster or destroy this card
 		local op=b1 and Duel.SelectEffect(tp,
-			{b1,aux.Stringid(2202500158,0)},
-			{b2,aux.Stringid(2202500158,1)}) or 2
+			{b1,aux.Stringid(2002000001,0)},
+			{b2,aux.Stringid(2002000001,1)}) or 2
 		if op==1 then
 			local g=Duel.SelectReleaseGroup(tp,Card.IsReleasableByEffect,1,1,c)
 			Duel.Release(g,REASON_COST)
