@@ -1,4 +1,5 @@
 --Substifusion
+
 local s,id=GetID()
 function s.initial_effect(c)
 	local e1=Fusion.CreateSummonEff(c,nil,nil,s.fextra)

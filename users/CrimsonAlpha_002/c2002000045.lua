@@ -1,4 +1,5 @@
 --Infestation Assault
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Activate and (you can) Special Summon from the hand and Deck

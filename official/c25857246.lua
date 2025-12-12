@@ -2,6 +2,7 @@
 --Nekroz of Valkyrus
 --modified for CrimsonAlpha
 
+
 local s,id=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()
@@ -27,7 +28,7 @@ function s.initial_effect(c)
 	c2:SetRange(LOCATION_MZONE)
 	c2:SetCountLimit(1,{id,2})
 	c2:SetCondition(aux.AND(s.atkcon,aux.NekrozOuroCheck))
-	c2:SetCost(aux.SelfTributeCost)
+	c2:SetCost(aux.AND(s.rmcost,Cost.SelfTribute))
 	c:RegisterEffect(c2)
 	--draw
 	local e3=Effect.CreateEffect(c)
@@ -57,6 +58,12 @@ function s.atkcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local g=Duel.SelectMatchingCard(tp,s.cfilter,tp,LOCATION_MZONE+LOCATION_GRAVE,0,1,1,nil)
 	Duel.Remove(g,POS_FACEUP,REASON_COST)
 	Duel.SendtoGrave(e:GetHandler(),REASON_COST+REASON_DISCARD)
+end
+function s.rmcost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(s.cfilter,tp,LOCATION_MZONE+LOCATION_GRAVE,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+	local g=Duel.SelectMatchingCard(tp,s.cfilter,tp,LOCATION_MZONE+LOCATION_GRAVE,0,1,1,nil)
+	Duel.Remove(g,POS_FACEUP,REASON_COST)
 end
 function s.atkop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.NegateAttack() then

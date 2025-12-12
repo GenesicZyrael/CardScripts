@@ -1,6 +1,7 @@
 --リチュアの写魂鏡
 --Gishki Photomirror
 --Modified for CrimsonAlpha
+
 local s,id=GetID()
 function s.initial_effect(c)
     --Ritual Summon any "Gishki" Ritual Monster

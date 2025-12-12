@@ -1,5 +1,6 @@
 --Worm Cartaros
 --Modified for CrimsonRemodels
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Add 1 Reptile "Worm" monster from your Deck to your hand, except "Worm Cartaros"
@@ -11,7 +12,7 @@ function s.initial_effect(c)
 	e1:SetCountLimit(1,id)
 	e1:SetTarget(s.thtg)
 	e1:SetOperation(s.thop)
-	c:RegisterEffect(e1,false,CUSTOM_REGISTER_FLIP)
+	c:RegisterEffect(e1)
 end
 s.listed_series={SET_WORM}
 function s.thfilter(c)

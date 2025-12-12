@@ -1,4 +1,5 @@
 --Vesicaru, the Festering True Dracolord
+
 local s,id=GetID()
 function s.initial_effect(c)
 	Pendulum.AddProcedure(c)

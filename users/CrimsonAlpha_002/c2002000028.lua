@@ -1,4 +1,5 @@
 --Stardust Xceed Dragon
+
 local s,id=GetID()
 function s.initial_effect(c)
 	c:SetSPSummonOnce(id)

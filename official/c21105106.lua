@@ -1,6 +1,7 @@
 --ｓｏｐｈｉａの影霊衣
 --Nekroz of Sophia
 --modified for CrimsonAlpha
+
 local s,id=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()
@@ -25,7 +26,7 @@ function s.initial_effect(c)
 	c2:SetRange(LOCATION_MZONE)
 	c2:SetCountLimit(1,{id,2})
 	c2:SetCondition(aux.AND(s.discon,aux.NekrozOuroCheck))
-	c2:SetCost(aux.SelfTributeCost)
+	c2:SetCost(aux.AND(s.discost2,Cost.SelfTribute))
 	c:RegisterEffect(c2)
 	--remove
 	local e3=Effect.CreateEffect(c)
@@ -66,6 +67,12 @@ function s.discost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DISCARD)
 	local g=Duel.SelectMatchingCard(tp,s.cfilter,tp,LOCATION_HAND,0,1,1,nil)
 	g:AddCard(e:GetHandler())
+	Duel.SendtoGrave(g,REASON_DISCARD+REASON_COST)
+end
+function s.discost2(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(s.cfilter,tp,LOCATION_HAND,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DISCARD)
+	local g=Duel.SelectMatchingCard(tp,s.cfilter,tp,LOCATION_HAND,0,1,1,nil)
 	Duel.SendtoGrave(g,REASON_DISCARD+REASON_COST)
 end
 function s.disop(e,tp,eg,ep,ev,re,r,rp)

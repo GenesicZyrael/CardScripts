@@ -1,4 +1,5 @@
 --Sword Saint of the Ice Barrier
+
 local s,id=GetID()
 function s.initial_effect(c)
 	c:SetSPSummonOnce(id)

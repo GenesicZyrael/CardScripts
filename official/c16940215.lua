@@ -2,6 +2,7 @@
 --Naturia Vein
 --Modified for CrimsonAlpha
 
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Negate Spell/Trap Card activation

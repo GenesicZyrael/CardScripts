@@ -1,4 +1,5 @@
 --Odd-Eyes Hyperlink Dragon
+
 local s,id=GetID()
 local TYPES=TYPE_FUSION+TYPE_RITUAL+TYPE_SYNCHRO+TYPE_XYZ+TYPE_PENDULUM
 function s.initial_effect(c)

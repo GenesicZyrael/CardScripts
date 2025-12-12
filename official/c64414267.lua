@@ -1,6 +1,7 @@
 --煉獄の騎士 ヴァトライムス
 --Darktellarknight Batlamyus
 --Modified for CrimsonAlpha 
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Xyz Summon

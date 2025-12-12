@@ -1,4 +1,5 @@
 --Infector Pain, the True Dracoverlord
+
 local s,id=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()

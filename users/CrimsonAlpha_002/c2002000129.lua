@@ -1,4 +1,5 @@
 --Eldritch Countdown
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Final Countdown enhancement

@@ -1,5 +1,6 @@
 --星輝士 デルタテロス
 --Modified for CrimsonAlpha 
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--xyz summon

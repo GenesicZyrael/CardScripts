@@ -1,4 +1,5 @@
 --Sleipnir of the Nordic Beasts
+
 local s,id=GetID()
 function s.initial_effect(c)
 	c:SetSPSummonOnce(id)

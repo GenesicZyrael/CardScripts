@@ -1,4 +1,5 @@
 --The Grim Exodia Necross Incarnate
+
 local s,id=GetID()
 function s.initial_effect(c) 
 	c:EnableReviveLimit()

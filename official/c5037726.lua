@@ -1,4 +1,5 @@
 --Light Spirit Art - Hijiri
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Activate
@@ -20,7 +21,7 @@ function s.charmer_filter(c,att)
 end
 function s.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local fg=Group.CreateGroup()
-	for i,pe in ipairs({Duel.IsPlayerAffectedByEffect(tp,2002000130)}) do
+	for i,pe in ipairs({Duel.IsPlayerAffectedByEffect(tp,2202500154)}) do
 		fg:AddCard(pe:GetHandler())
 	end
 	e:SetLabel(1)
@@ -40,7 +41,7 @@ function s.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if #fg>0 then 
 		if ft>0 and Duel.IsExistingMatchingCard(s.charmer_filter,tp,LOCATION_DECK,0,1,nil,ATTRIBUTE_LIGHT) then 
 			if #g>0 then 
-				if Duel.SelectYesNo(tp,aux.Stringid(2002000130,2)) then
+				if Duel.SelectYesNo(tp,aux.Stringid(2202500154,2)) then
 					g=Duel.GetMatchingGroup(s.charmer_filter,tp,LOCATION_DECK,0,nil,ATTRIBUTE_LIGHT)
 				end
 			else
@@ -60,7 +61,7 @@ function s.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 			fc=fg:Select(tp,1,1,nil)
 		end
 		Duel.Hint(HINT_CARD,0,fc:GetCode())
-		fc:RegisterFlagEffect(2002000130,RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END,0,0)	
+		fc:RegisterFlagEffect(2202500154,RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END,0,0)	
 		Duel.SendtoGrave(tc,REASON_COST)
 	end
 end

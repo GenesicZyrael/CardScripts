@@ -1,4 +1,5 @@
 --Ghost Fox & Wild Performer
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Change Effect Target

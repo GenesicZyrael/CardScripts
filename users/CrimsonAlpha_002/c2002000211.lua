@@ -1,5 +1,6 @@
 --Worm Gulse
 --Modified for CrimsonRemodels
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Special Summon 1 Reptile "Worm" monster from your hand in face-up or face-down Defense Position, except "Worm Gulse"
@@ -11,7 +12,7 @@ function s.initial_effect(c)
 	e1:SetCountLimit(1,id)
 	e1:SetTarget(s.sptg)
 	e1:SetOperation(s.spop)
-	c:RegisterEffect(e1,false,CUSTOM_REGISTER_FLIP)
+	c:RegisterEffect(e1)
 end
 s.listed_series={SET_WORM}
 function s.spfilter(c,e,tp)

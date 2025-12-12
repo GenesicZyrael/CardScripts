@@ -1,4 +1,5 @@
 --Secret Treasures of the Yang Zing
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Activate and (you can) Special Summon from the Deck

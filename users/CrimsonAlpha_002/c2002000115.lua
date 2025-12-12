@@ -1,4 +1,5 @@
 --Scarlight Red Dragon Archfiend/Assault Mode
+
 local s,id=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()

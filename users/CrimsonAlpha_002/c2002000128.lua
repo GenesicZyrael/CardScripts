@@ -1,4 +1,5 @@
 --Beloved Aid of the Destruction Swordsman
+
 local s,id=GetID() 
 function s.initial_effect(c)
 	--Activate

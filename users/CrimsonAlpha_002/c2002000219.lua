@@ -1,5 +1,6 @@
 --Worm Opera
 --Modified for CrimsonRemodels
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Cannot be used as material for a monster from the Extra Deck, unless all other materials are "Worm" monsters

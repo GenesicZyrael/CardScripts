@@ -1,6 +1,7 @@
 --ゴッドアイズ・ファントム・ドラゴン
 --All-Eyes Phantom Dragon
 --Scripted by AlphaKretin
+
 local s,id=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()

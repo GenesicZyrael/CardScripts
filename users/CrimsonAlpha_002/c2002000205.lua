@@ -1,5 +1,6 @@
 --Worm Apocalypse
 --Modified for CrimsonRemodels
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Cannot be used as material, except for the Special Summon of a Reptile "Worm" monster
@@ -13,7 +14,7 @@ function s.initial_effect(c)
 	e1:SetCountLimit(1,id)
 	e1:SetTarget(s.sptg)
 	e1:SetOperation(s.spop)
-	c:RegisterEffect(e1,false,CUSTOM_REGISTER_FLIP)
+	c:RegisterEffect(e1)
 end
 s.listed_series={SET_WORM}
 s.listed_names={id,88650530}

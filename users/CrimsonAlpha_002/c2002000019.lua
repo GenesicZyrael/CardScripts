@@ -1,4 +1,5 @@
 --Contraalto the Melodious Vocalist
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Xyz Summon Procedure

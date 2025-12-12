@@ -2,6 +2,7 @@
 --Gishki Nekromirror
 --scripted by pyrQ
 --modified by Dikeido~ for The Underground
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Ritual Summon 1 Ritual Monster

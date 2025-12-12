@@ -1,6 +1,7 @@
 --星輝士 トライヴェール
 --Stellarknight Triverr
 --Modified for CrimsonAlpha 
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--xyz summon

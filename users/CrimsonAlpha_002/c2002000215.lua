@@ -1,5 +1,6 @@
 --Worm King
 --Modified for CrimsonRemodels
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Contact Fusion

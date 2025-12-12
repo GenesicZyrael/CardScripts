@@ -1,6 +1,7 @@
 --ドラグニティ-クーゼ
 --Dragunity Couse
 --scripted by Naim
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--synchro limit

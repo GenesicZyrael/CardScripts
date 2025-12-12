@@ -1,4 +1,5 @@
 --Dimension Dice Magician
+
 local s,id=GetID()
 local sid=300102004
 function s.initial_effect(c)

@@ -3,6 +3,7 @@
 -- Scripted by Hatter
 --Modified for CrimsonAlpha
 
+
 local s,id=GetID()
 function s.initial_effect(c)
 	-- Send 1 "Naturia" card to the GY

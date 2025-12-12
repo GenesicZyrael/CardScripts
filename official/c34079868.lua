@@ -1,5 +1,6 @@
 --真竜剣士マスターP
 --Master Peace, the True Dracoslayer
+
 local s,id=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()

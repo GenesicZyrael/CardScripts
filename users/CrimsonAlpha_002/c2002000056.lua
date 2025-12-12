@@ -1,4 +1,5 @@
 --Wynn, Charmer of Gusto
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Set 1 "Gusto" Spell/Trap or "Quill Pen of Gulldos" from your Deck

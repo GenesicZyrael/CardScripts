@@ -1,4 +1,5 @@
 --Tellarknight Orionis
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Special Summon itself from the hand or GY
@@ -72,7 +73,9 @@ function s.selfspop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function s.thfilter(c)
-	return (c:IsSetCard(SET_TELLARKNIGHT) or c:IsSetCard(SET_STELLARNOVA)) and c:IsTrap() and c:IsAbleToHand()
+	return  c:IsAbleToHand() 
+		and (c:IsSetCard(SET_TELLARKNIGHT) and c:IsTrap())
+		or (c:IsSetCard(SET_STELLARNOVA) or c:IsStellarnova())
 end
 function s.exfilter(c)
 	return c:IsXyzSummonable()

@@ -1,4 +1,5 @@
 --Majestic Rose Dragon
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--synchro summon
@@ -85,7 +86,7 @@ function s.desop(opt)
 	end
 end
 function s.filter(c)
-	return aux.disfilter1(c) or aux.nzatk(c)
+	return c:IsNegatableMonster() or aux.nzatk(c)
 end
 function s.negtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then return chkc:IsControler(1-tp) and chkc:IsLocation(LOCATION_MZONE) and s.filter(chkc) end

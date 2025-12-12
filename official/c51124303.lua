@@ -1,5 +1,6 @@
 --影霊衣の万華鏡
 --Nekroz Kaleidoscope
+
 local s,id=GetID()
 function s.initial_effect(c)
 	--Ritual Summon any number of "Nekroz" Ritual Monsters whose Levels exactly equal the Level of the sent/tributed monster

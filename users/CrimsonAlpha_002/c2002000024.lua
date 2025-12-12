@@ -1,4 +1,5 @@
 --Winged Serpent of the Mist Valley
+
 local s,id=GetID()
 function s.initial_effect(c)
 	Link.AddProcedure(c,aux.FilterBoolFunctionEx(Card.IsAttribute,ATTRIBUTE_WIND),2,2)
